@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>English Quiz</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<main class="text-center" id="question_view">
+		  <img id="image" src="{{image}}" alt="Undifinded avatar"></img>
+		  <div class="row ">
+		    <div class="col-xs-6">
+		      <p class="user_name">Chào : <span id="username">{{username}}</span></p>
+		    </div>
+		      <div class="col-xs-6">
+		        <span class="user_point"><i class="fa fa-trophy" aria-hidden="true"></i> Điểm : </span>
+		      </div>
+		  </div>
+		  <script type="text/javascript">
+		    document.getElementById("username").innerHTML = window.localStorage.username || "Undifinded name";
+		    document.getElementById("image").src = window.localStorage.image;
+		  </script>
+		</main>
+		<div class="">
+			{{{body}}}
+		</div>
+	</div>
+</body>
+</html>

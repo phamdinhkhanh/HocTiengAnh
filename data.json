@@ -1,0 +1,69 @@
+/*1.Data question*/
+[
+    {
+        "_id": "5a0c770c0946a83a08317525",
+        "updatedAt": "2017-11-15T17:19:08.825Z",
+        "createdAt": "2017-11-15T17:19:08.825Z",
+        "title": "___ are you from?",
+        "points": 5,
+        "__v": 0,
+        "answers": [
+            "A. what",
+            "B. where",
+            "C. who",
+            "D. whom"
+        ]
+    },
+    {
+        "_id": "5a0c7de10bf5c43c706bf397",
+        "updatedAt": "2017-11-15T17:48:17.549Z",
+        "createdAt": "2017-11-15T17:48:17.549Z",
+        "title": "What ___ you do yesterday?",
+        "result": 0,
+        "points": 5,
+        "__v": 0,
+        "answers": [
+            "A. did",
+            "B. are",
+            "C. is",
+            "D. do"
+        ]
+    }
+]
+
+
+
+/*2. Data user*/
+
+[
+    {
+        "_id": "5a0dd4c0254f2141bc6888e8",
+        "updatedAt": "2017-11-16T18:11:12.504Z",
+        "createdAt": "2017-11-16T18:11:12.504Z",
+        "username": "phamdinhkhanhdjkfalkfdj",
+        "password": "123",
+        "email": "phamdinhkhanh.tkt53.neu@gmail.com",
+        "__v": 0,
+        "point": 0
+    },
+    {
+        "_id": "5a0dd4e1254f2141bc6888ea",
+        "updatedAt": "2017-11-16T18:11:45.596Z",
+        "createdAt": "2017-11-16T18:11:45.596Z",
+        "username": "phamdinhkhanh",
+        "password": "123",
+        "email": "phamdinhkhanh.tkt53.neu1@gmail.com",
+        "__v": 0,
+        "point": 0
+    },
+    {
+        "_id": "5a0dd545254f2141bc6888eb",
+        "updatedAt": "2017-11-16T18:13:25.538Z",
+        "createdAt": "2017-11-16T18:13:25.538Z",
+        "username": "khanhpd2",
+        "password": "123",
+        "email": "phamdinhkhanh.tkt53@gmail.com",
+        "__v": 0,
+        "point": 0
+    }
+]

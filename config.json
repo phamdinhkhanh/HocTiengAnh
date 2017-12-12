@@ -1,0 +1,9 @@
+{
+  "production":{
+    "connectionString":"mongodb://admin:admin@ds115396.mlab.com:15396/hoctienganh"
+  },
+  "development":{
+    "connectionString":"mongodb://localhost/hoctienganh",
+    "port":1000
+  }
+}

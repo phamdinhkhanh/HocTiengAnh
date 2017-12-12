@@ -1,0 +1,43 @@
+body .container{
+  width: 500px;
+  border: 1px solid;
+  text-align: center;
+}
+
+.user_name{
+  padding: 10px;
+  margin: 0;
+  border: 1px solid;
+  text-align: center;
+  font-weight: bold;
+  color: blue;
+}
+
+#image {
+  margin-bottom: 50px;
+}
+
+.user_point {
+  display: inline-block;
+  border: 1px solid;
+  padding: 10px;
+}
+
+.question{
+  margin-bottom: 20px;
+}
+
+.text-center{
+  text-align: center;
+  margin-top: 50px;
+}
+
+.fb-login-button {
+    margin-top: 200px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.fb-login-button > span {
+  margin-bottom: 100px;
+}
