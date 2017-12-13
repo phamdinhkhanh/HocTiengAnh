@@ -21,7 +21,7 @@ getQuestionById = (id, callback) => {
 }
 
 getRandomQuestion = (callback) => {
-  questionModel.aggregate({ $sample: { size: 1 } },(err,data) => {
+  return questionModel.aggregate({ $sample: { size: 1 } },(err,data) => {
     if(err) {
       callback(err);
     } else {

@@ -9,7 +9,7 @@ router.post('/',(req,res) => {
       console.log(err);
       res.status(500).send(err);
     } else {
-      // res.status(200).send(data);
+      res.status(200).send(data);
     }
   })
 })
@@ -20,7 +20,8 @@ router.get('/', (req, res) => {
     if(err){
       res.status(500).send(err);
     } else {
-      res.status(200).send(data);
+      res.status(200).send(data[0]);
+      // res.render("question",{question:data[0]});
     }
   });
 })

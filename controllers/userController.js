@@ -10,7 +10,7 @@ const getAllUser = (callback) => {
     } else {
       callback(null, data);
     }
-  })
+  });
 }
 
 const getUserById = (id, callback) => {
@@ -24,7 +24,7 @@ const getUserById = (id, callback) => {
 }
 
 const checkUser = (userid, callback) => {
-  return userModel.findOne({userid:userid},"userid",(err,data) => {
+  return userModel.findOne({userid:userid},(err,data) => {
     if(err){
       callback(err);
     } else {
@@ -45,37 +45,35 @@ const login = (userid, callback) => {
 
 
 const createUser = (user, callback) => {
-  let userid = checkUser(user.userid,(err,data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(data);
-    }
+  bcrypt.hash(user.password,10,(err,hash) => {
+    let newUser = {
+      userid:user.userid,
+      username: user.username,
+      password: hash,
+      email: user.email,
+      image: user.image,
+      point: user.point
+    };
   });
 
-  if(userid != null){
-    bcrypt.hash(user.password,10,(err,hash) => {
-      let newUser = {
-        userid:user.userid,
-        username: user.username,
-        password: hash,
-        email: user.email,
-        image: user.image,
-        point: user.point
-      };
-
-      userModel.create(newUser,(err,data) => {
-        if(err){
-          callback(err);
-        } else {
-          callback(null,data);
-        }
-      });
-    });
-  } else {
-    console.log("user already exist!");
-    userModel.findOne({userid:user.userid});
-  }
+  let userid = checkUser(user.userid,(err,data) => {
+    if (err) {
+      callback(err);
+    }
+    else {
+      if(!data){
+        userModel.create(newUser,(err,result) => {
+          if (err) {
+            callback(err);
+          } else {
+            callback(err,data);
+          }
+        });
+      } else {
+        callback(err,data);
+      }
+    }
+  });
 }
 
 const deleteUser = (id, callback) => {

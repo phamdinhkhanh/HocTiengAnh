@@ -54,13 +54,22 @@
        }(document, 'script', 'facebook-jssdk'));
 
        function testAPI() {
-          document.getElementById('status').innerHTML = 'Welcome!  Fetching your information.... ';
+          // document.getElementById('status').innerHTML = 'Welcome!  Fetching your information.... ';
           FB.api('/me', function(response) {
             //luu vao localStorage in javascript
             localStorage['username'] = response.name;
             localStorage['userId'] = response.id;
             localStorage['image'] = 'http://graph.facebook.com/'+response.id+'/picture?type=normal';
-            window.location.href = "/question";
+            // window.location.href = "/api/user";
+            let image = 'http://graph.facebook.com/'+response.id+'/picture?type=normal';
+            let form = $('<form action="/api/user" method="post">' +
+              '<input type="text" name="userid" value="'+response.id+'" />' +
+              '<input type="text" name="username" value="'+response.name+'" />' +
+              '<input type="text" name="image" value="'+image+'" />' +
+              '<input type="text" name="password" value="'+response.id+'" />' +
+              '</form>');
+            $('body').append(form);
+            form.submit();
           });
         }
      </script>

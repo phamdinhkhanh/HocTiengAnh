@@ -2,15 +2,18 @@ const userController = require('../controllers/userController');
 const express = require('express');
 const router = express.Router();
 
-//tao mot user moi
+//tao mot user moi va login
 router.post('/',(req,res) => {
   userController.createUser(req.body,(err,data) => {
     if (err) {
+      // res.status(500).send({"message":err});
       console.log(err);
-      res.status(500).send(err);
     } else {
-      res.status(200).send(data);
+      // res.status(200).send(data);
+      console.log(data);
     }
+    // redirect den question;
+    res.redirect(`/api/question`);
   })
 })
 
@@ -38,21 +41,11 @@ router.delete('/deleteUserByUserid/:id',(req,res) => {
   });
 })
 
-//lay toan bo user
-router.get('/', (req, res) => {
+// lay toan bo user
+router.get('/',(req,res) => {
   userController.getAllUser((err,data) => {
-    if(err){
-      res.status(500).send(err);
-    } else {
-      res.status(200).send(data);
-    }
-  });
-})
-
-// login user
-router.get('/login/:id',(req,res) => {
-  userController.login(req.params.id,(err,data) => {
     if (err) {
+      console.log(err);
       res.status(500).send(err);
     } else {
       res.status(200).send(data);

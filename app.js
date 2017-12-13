@@ -22,14 +22,13 @@ app.set("view engine", "handlebars");
 app.use(bodyParser.urlencoded({ extended : true }) );
 app.use(bodyParser.json({ extended: true }) );
 
-
 app.get('/',(req,res) => {
   res.render("login");
 })
 
 app.use('/api/question', questionRouter);
 app.use('/api/user',userRouter);
-app.use('/question', questionViewRouter);
+// app.use('/question', questionViewRouter);
 app.use(express.static(__dirname + "/public"));
 
 
