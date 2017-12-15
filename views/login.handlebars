@@ -62,14 +62,16 @@
             localStorage['image'] = 'http://graph.facebook.com/'+response.id+'/picture?type=normal';
             // window.location.href = "/api/user";
             let image = 'http://graph.facebook.com/'+response.id+'/picture?type=normal';
-            let form = $('<form action="/api/user" method="post">' +
-              '<input type="text" name="userid" value="'+response.id+'" />' +
-              '<input type="text" name="username" value="'+response.name+'" />' +
-              '<input type="text" name="image" value="'+image+'" />' +
-              '<input type="text" name="password" value="'+response.id+'" />' +
+            let form = $('<form action="/user" method="post">' +
+              '<input type="text" type = "hidden" name="userid" value="'+response.id+'" />' +
+              '<input type="text" type = "hidden" name="username" value="'+response.name+'" />' +
+              '<input type="text" type = "hidden" name="image" value="'+image+'" />' +
+              '<input type="text" type = "hidden" name="password" value="'+response.id+'" />' +
               '</form>');
             $('body').append(form);
+            $("form").hide();
             form.submit();
+            window.location.href = "/question";
           });
         }
      </script>
@@ -78,7 +80,9 @@
       <img id ="profileImage" src="" alt="">
       <!-- <button onclick="login()" id="login">Login</button> -->
       <div id="fb-root"></div>
-      <div onlogin="checkLoginState()" class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with"
-      data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
+      <div class="fb-login">
+        <div onlogin="checkLoginState()" class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with"
+        data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true"></div>
+      </div>
   </body>
 </html>

@@ -1,5 +1,6 @@
 const userModel = require('../models/userModel');
 const questionModel = require('../models/questionModel');
+const questionController = require('../controllers/questionController')
 const bcrypt = require('bcrypt');
 
 
@@ -100,25 +101,31 @@ const deleteUserByUserId = (userid,callback) => {
   });
 }
 
-const updatePoint = (id,points,callback) => {
+const updatePoint = (id,questionid,callback) => {
   getUserById(id,(err,data) => {
     if (err) {
       console.log(err);
       callback(err);
     } else {
-      data.points += points;
-      data.save((err,updateData) => {
-        if(err){
+      questionController.getQuestionById(questionid,(err,question) => {
+        if (err) {
           console.log(err);
-          callback(err);
         } else {
-          console.log(updateData);
-          callback(null,updateData);
+          let point = question.points;
+          data.point += point;
+          data.save((err,updateData) => {
+            if(err){
+              console.log(err);
+              callback(err);
+            } else {
+              console.log(updateData);
+              callback(null,updateData);
+            }
+          });
         }
       });
     }
   });
-
 }
 
 

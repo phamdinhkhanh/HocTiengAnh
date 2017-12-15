@@ -6,14 +6,13 @@ const router = express.Router();
 router.post('/',(req,res) => {
   userController.createUser(req.body,(err,data) => {
     if (err) {
-      // res.status(500).send({"message":err});
+      res.status(500).send({"message":err});
       console.log(err);
     } else {
-      // res.status(200).send(data);
+      res.status(200).send(data);
+      // res.render("main",{user:data});
       console.log(data);
     }
-    // redirect den question;
-    res.redirect(`/api/question`);
   })
 })
 

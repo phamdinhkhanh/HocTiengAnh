@@ -14,14 +14,14 @@ router.post('/',(req,res) => {
   })
 })
 
-//lay toan bo cau hoi
+//lay random 1 cau hoi
 router.get('/', (req, res) => {
   questionController.getRandomQuestion((err,data) => {
     if(err){
       res.status(500).send(err);
     } else {
-      res.status(200).send(data[0]);
-      // res.render("question",{question:data[0]});
+      res.status(200).send(data);
+      // res.render("question");
     }
   });
 })

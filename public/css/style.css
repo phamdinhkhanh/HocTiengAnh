@@ -1,43 +1,60 @@
-body .container{
-  width: 500px;
-  border: 1px solid;
+body {
   text-align: center;
+  border: 1px solid blue;
+  margin-top: 30px;
+  width: 80%;
+  transform: translate(12.5%,0%);
 }
 
-.user_name{
+header{
+    background: #edfedf;
+    padding: 15px 0;
+    display: inline-block;
+    width: 100%;
+}
+
+header .container {
+  width: 100%;
+}
+
+header #image {
+  margin-bottom: 15px;
+  width: 33%;
+  height: 33%;
+}
+
+header .user_name {
   padding: 10px;
-  margin: 0;
+  left: 0px;
   border: 1px solid;
-  text-align: center;
+  font-weight: bold;
+  color: blue;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+header .user_point {
+  padding: 10px;
+  right: 0px;
+  border: 1px solid;
+  white-space: nowrap;
   font-weight: bold;
   color: blue;
 }
 
-#image {
-  margin-bottom: 50px;
+.content {
+  height: 100%;
+  margin-bottom: 10px;
 }
 
-.user_point {
-  display: inline-block;
-  border: 1px solid;
-  padding: 10px;
+.content .fb-login {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  margin-bottom: 10px
 }
 
-.question{
-  margin-bottom: 20px;
-}
-
-.text-center{
-  text-align: center;
-  margin-top: 50px;
-}
-
-.fb-login-button {
-    margin-top: 200px;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.fb-login-button > span {
-  margin-bottom: 100px;
+.content .fb-login-button {
+  margin: 0 auto;
 }

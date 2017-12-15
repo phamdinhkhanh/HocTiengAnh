@@ -1,27 +1,26 @@
-
 <script id="question-template" type="text/x-handlebars-template">
-  <h3 class="question">{{question.title}}</h3>
-  <form action="" method="post">
+  <h3 class="question">\{{question.title}}</h3>
+  <form action="" method="post" action="/question/answers" id="question_form">
       <div class="row">
           <div class="col-xs-6">
-              <button class="btn btn-primary" name="chon" value="a">{{question.answers.[0]}}</button>
+            <button class="btn btn-primary" name="chon" value="a">\{{question.answers.[0]}}</button>
           </div>
           <div class="col-xs-6">
-            <button class="btn btn-primary" name="chon" value="b">{{question.answers.[1]}}</button>
+            <button class="btn btn-primary" name="chon" value="b">\{{question.answers.[1]}}</button>
           </div>
       </div>
       <br>
       <div class="row">
           <div class="col-xs-6">
-            <button class="btn btn-primary" name="chon" value="c">{{question.answers.[2]}}</button>
+            <button class="btn btn-primary" name="chon" value="c">\{{question.answers.[2]}}</button>
           </div>
           <div class="col-xs-6">
-            <button class="btn btn-primary" name="chon" value="d">{{question.answers.[3]}}</button>
+            <button class="btn btn-primary" name="chon" value="d">\{{question.answers.[3]}}</button>
           </div>
       </div>
   </form>
   <br>
-  <p><a class="btn btn-default" href="/api/question">Câu hỏi khác</a></p>
+  <p><a class="btn btn-default" href="/question">Câu hỏi khác</a></p>
   <p><a class="btn btn-default" href="#">Xếp hạng cá nhân</a></p>
 </script>
 

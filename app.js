@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const exphbs = require('express-handlebars');
 const questionRouter = require('./routers/questionRouter');
 const questionViewRouter = require('./routers/questionViewRouter');
+const userViewRouter = require('./routers/userViewRouter');
 const userRouter = require('./routers/userRouter');
 const config = require('./config.json');
 let app = express();
@@ -28,7 +29,8 @@ app.get('/',(req,res) => {
 
 app.use('/api/question', questionRouter);
 app.use('/api/user',userRouter);
-// app.use('/question', questionViewRouter);
+app.use('/question', questionViewRouter);
+app.use('/user', userViewRouter);
 app.use(express.static(__dirname + "/public"));
 
 

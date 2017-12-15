@@ -13,25 +13,27 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="container">
-		<main class="text-center" id="question_view">
-		  <img id="image" src="{{image}}" alt="Undifinded avatar"></img>
+	<header class="header">
+		<div class="container" id="userInfo">
+		  <img id="image" src="{{user.image}}" alt="Undifinded avatar"></img>
 		  <div class="row ">
 		    <div class="col-xs-6">
-		      <p class="user_name">Chào : <span id="username">{{username}}</span></p>
+						<p class="user_name">Chào : <span id="username">{{user.username}}</span></p>
 		    </div>
-		      <div class="col-xs-6">
-		        <span class="user_point"><i class="fa fa-trophy" aria-hidden="true"></i> Điểm : </span>
-		      </div>
+				<div class="col-xs-6">
+	        <p class="user_point"><i class="fa fa-trophy" aria-hidden="true"></i> Điểm : <span id="point">{{user.point}}</span> </p>
+	      </div>
 		  </div>
 		  <script type="text/javascript">
 		    document.getElementById("username").innerHTML = window.localStorage.username || "Undifinded name";
 		    document.getElementById("image").src = window.localStorage.image;
+				document.getElementById("point").innerHTML = 0;
 		  </script>
-		</main>
-		<div class="">
-			{{{body}}}
+			<!-- <script src="/js/user.js"></script> -->
 		</div>
+	</header>
+	<div class="content">
+		{{{body}}}
 	</div>
 </body>
 </html>
